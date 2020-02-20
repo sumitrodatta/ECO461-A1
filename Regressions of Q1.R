@@ -1,0 +1,8 @@
+data=read.csv("futures and spots.csv")
+View(data)
+gas_alone = lm(data$gasoline.change.in.spot ~ data$gasoline.change.in.future.contract.1)
+summary(gas_alone)
+gas_against_crude = lm(data$gasoline.change.in.spot ~ data$crude.oil.change.in.future.contract.1)
+summary(gas_against_crude)
+gas_against_heating_oil = lm(data$gasoline.change.in.spot ~ data$heating.oil.change.in.future.contract.1)
+summary(gas_against_heating_oil)
